@@ -1,0 +1,345 @@
+{
+  "name": "class-fold",
+  "displayName": "Class Fold",
+  "description": "Intelligent inline folding for Tailwind CSS classes, JSX classNames, SVG paths, and long image URLs.",
+  "version": "0.1.0",
+  "publisher": "rahulchouhan",
+  "author": {
+    "name": "Rahul Chouhan"
+  },
+  "icon": "media/icon.png",
+  "license": "BSD-3-Clause",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chouhan-rahul/class-fold"
+  },
+  "homepage": "https://github.com/chouhan-rahul/class-fold#readme",
+  "bugs": {
+    "url": "https://github.com/chouhan-rahul/class-fold/issues"
+  },
+  "qna": "https://github.com/chouhan-rahul/class-fold/discussions",
+  "sponsor": {
+    "url": "https://github.com/sponsors/chouhan-rahul"
+  },
+  "funding": [
+    {
+      "type": "github",
+      "url": "https://github.com/sponsors/chouhan-rahul"
+    },
+    {
+      "type": "ko-fi",
+      "url": "https://ko-fi.com/rahulchouhan"
+    },
+    {
+      "type": "buy-me-a-coffee",
+      "url": "https://buymeacoffee.com/rahulchouhan"
+    }
+  ],
+  "badges": [
+    {
+      "url": "https://img.shields.io/github/stars/class-fold/class-fold",
+      "href": "https://github.com/class-fold/class-fold",
+      "description": "GitHub Stars"
+    },
+    {
+      "url": "https://img.shields.io/github/license/class-fold/class-fold",
+      "href": "https://github.com/class-fold/class-fold/blob/main/LICENSE",
+      "description": "License"
+    },
+    {
+      "url": "https://img.shields.io/github/v/release/class-fold/class-fold",
+      "href": "https://github.com/class-fold/class-fold/releases",
+      "description": "Latest Release"
+    }
+  ],
+  "engines": {
+    "vscode": "^1.95.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Formatters",
+    "Other"
+  ],
+  "keywords": [
+    "class-fold",
+    "inline-fold",
+    "inline-folding",
+    "code-folding",
+    "tailwind",
+    "tailwindcss",
+    "classname",
+    "jsx",
+    "tsx",
+    "html",
+    "vue",
+    "svelte",
+    "astro",
+    "svg",
+    "image",
+    "base64",
+    "data-uri",
+    "url",
+    "long-attributes",
+    "code-cleanup"
+  ],
+  "main": "./dist/extension.js",
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "classFold.toggle",
+        "title": "Class Fold: Toggle Folding (Global)",
+        "category": "Class Fold"
+      },
+      {
+        "command": "classFold.toggleLine",
+        "title": "Class Fold: Toggle Fold on Current Line",
+        "category": "Class Fold"
+      },
+      {
+        "command": "classFold.unfoldAll",
+        "title": "Class Fold: Unfold All in Active File",
+        "category": "Class Fold"
+      },
+      {
+        "command": "classFold.foldAll",
+        "title": "Class Fold: Re-Fold All in Active File",
+        "category": "Class Fold"
+      },
+      {
+        "command": "classFold.copyContent",
+        "title": "Class Fold: Copy Folded Content Under Cursor",
+        "category": "Class Fold"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "classFold.toggle",
+        "key": "alt+z",
+        "mac": "alt+z",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "classFold.toggleLine",
+        "key": "alt+l",
+        "mac": "alt+l",
+        "when": "editorTextFocus"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "classFold.toggle",
+          "group": "classFold@1"
+        },
+        {
+          "command": "classFold.toggleLine",
+          "group": "classFold@2"
+        },
+        {
+          "command": "classFold.copyContent",
+          "group": "classFold@3"
+        }
+      ]
+    },
+    "configuration": {
+      "type": "object",
+      "title": "Class Fold",
+      "properties": {
+        "classFold.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable or disable Class Fold inline folding."
+        },
+        "classFold.maskChar": {
+          "type": "string",
+          "default": "...",
+          "description": "The mask string or emoji displayed in place of folded content (e.g., '...', '⚡', '◈◈◈', '[class]')."
+        },
+        "classFold.useTypeSpecificMasks": {
+          "type": "boolean",
+          "default": true,
+          "description": "Use dedicated mask characters for different types of folded content (classes, images, and SVGs)."
+        },
+        "classFold.maskCharClass": {
+          "type": "string",
+          "default": "...",
+          "description": "Mask string displayed for folded HTML/JSX classes when type-specific masks are enabled."
+        },
+        "classFold.maskCharImage": {
+          "type": "string",
+          "default": "[img]",
+          "description": "Mask string displayed for folded image src and base64 URLs."
+        },
+        "classFold.maskCharSvg": {
+          "type": "string",
+          "default": "[svg]",
+          "description": "Mask string displayed for folded SVG paths and points."
+        },
+        "classFold.maskCharCustom": {
+          "type": "string",
+          "default": "...",
+          "description": "Mask string displayed for user-defined custom pattern matches."
+        },
+        "classFold.badgeStyle": {
+          "type": "string",
+          "enum": [
+            "minimal",
+            "pill",
+            "bordered"
+          ],
+          "enumDescriptions": [
+            "Minimalist text mask without background styling",
+            "Subtle rounded pill badge with theme-tinted background",
+            "Lightly bordered box around the folded mask"
+          ],
+          "default": "minimal",
+          "description": "Visual decoration style for the folded mask badge."
+        },
+        "classFold.maskColor": {
+          "type": "string",
+          "default": "",
+          "description": "Custom text color for the folded mask (e.g. '#60a5fa' or 'rgba(150,150,150,0.8)'). Leave empty for theme-adaptive color."
+        },
+        "classFold.badgeBackgroundColor": {
+          "type": "string",
+          "default": "",
+          "description": "Custom background color for the pill/bordered badge (e.g. 'rgba(59, 130, 246, 0.12)'). Leave empty for automatic theme tint."
+        },
+        "classFold.opacity": {
+          "type": "number",
+          "default": 0.65,
+          "minimum": 0.1,
+          "maximum": 1,
+          "description": "Opacity of the folded mask (from 0.1 to 1.0)."
+        },
+        "classFold.unfoldOn": {
+          "type": "string",
+          "enum": [
+            "cursor",
+            "line",
+            "selection",
+            "never"
+          ],
+          "enumDescriptions": [
+            "Unfold only when the cursor is directly inside the folded attribute value",
+            "Unfold any folded attributes on the line where the cursor currently rests",
+            "Unfold only when the text is actively selected",
+            "Keep folded at all times (toggle manually via command or shortcut)"
+          ],
+          "default": "cursor",
+          "description": "Trigger condition for temporarily unfolding content."
+        },
+        "classFold.minFoldLength": {
+          "type": "number",
+          "default": 20,
+          "minimum": 1,
+          "description": "Minimum character length required to fold an attribute value. Shorter strings stay visible."
+        },
+        "classFold.foldClasses": {
+          "type": "boolean",
+          "default": true,
+          "description": "Fold HTML class, JSX className, Vue :class, Svelte class, and Tailwind tw attributes."
+        },
+        "classFold.foldImages": {
+          "type": "boolean",
+          "default": true,
+          "description": "Fold long image src URLs, srcset attributes, and large base64 data URIs."
+        },
+        "classFold.foldSvgPaths": {
+          "type": "boolean",
+          "default": true,
+          "description": "Fold long SVG path definitions (d=\"...\" and points=\"...\")."
+        },
+        "classFold.foldCustomAttributes": {
+          "type": "boolean",
+          "default": true,
+          "description": "Fold custom attributes matching user-defined regular expressions."
+        },
+        "classFold.customPatterns": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [],
+          "description": "Custom regular expressions to fold. Capture group 1 must wrap the content to hide. Example: 'href=\"([^\"]*)\"'"
+        },
+        "classFold.showHoverPreview": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show an informative hover tooltip displaying the full folded content, stats, and quick actions."
+        },
+        "classFold.hoverImagePreview": {
+          "type": "boolean",
+          "default": true,
+          "description": "Render a visual image thumbnail preview inside the hover tooltip for folded image src and base64 URLs."
+        },
+        "classFold.showStatusBar": {
+          "type": "boolean",
+          "default": true,
+          "description": "Display a Class Fold status indicator and live fold counter in the VS Code status bar."
+        },
+        "classFold.debounceDelay": {
+          "type": "number",
+          "default": 60,
+          "minimum": 0,
+          "maximum": 500,
+          "description": "Debounce delay (in milliseconds) before re-indexing folds after document edits."
+        },
+        "classFold.cursorDebounceDelay": {
+          "type": "number",
+          "default": 25,
+          "minimum": 0,
+          "maximum": 200,
+          "description": "Debounce delay (in milliseconds) before updating fold states when cursor moves."
+        },
+        "classFold.activeLanguages": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [
+            "html",
+            "javascript",
+            "javascriptreact",
+            "typescript",
+            "typescriptreact",
+            "vue",
+            "svelte",
+            "astro",
+            "php",
+            "blade",
+            "twig",
+            "erb",
+            "markdown",
+            "mdx",
+            "xml",
+            "svg",
+            "razor",
+            "handlebars"
+          ],
+          "description": "List of language identifiers where Class Fold will be active."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run build",
+    "compile": "node esbuild.js",
+    "watch": "node esbuild.js --watch",
+    "type-check": "tsc --noEmit",
+    "build": "node esbuild.js --production",
+    "test": "node test/test.js",
+    "package": "vsce package --no-dependencies",
+    "package-vsix": "vsce package --no-dependencies"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "@types/vscode": "^1.95.0",
+    "@vscode/vsce": "^4.1.1",
+    "esbuild": "^0.28.2",
+    "typescript": "^7.0.2"
+  }
+}
