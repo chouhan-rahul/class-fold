@@ -12,7 +12,7 @@ We appreciate your time and effort in helping make Class Fold better!
 
 Before you get started, make sure you have the following installed:
 
-- [Node.js](https://nodejs.org/) (v20 or newer).
+- [Node.js](https://nodejs.org/) (v22 or newer).
 - [Visual Studio Code](https://code.visualstudio.com/).
 - [Git](https://git-scm.com/).
 

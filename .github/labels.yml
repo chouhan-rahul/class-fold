@@ -99,30 +99,42 @@
   color: "d4c5f9" # Lavender
   description: "Further information is requested"
 
-# --- 🖼️ EXTENSION COMPONENTS (Version Radar Specific) ---
-- name: "📌 gutter"
+# --- ⚡ EXTENSION COMPONENTS (Class Fold Specific) ---
+- name: "⚡ fold: engine"
   color: "007acc" # VS Code Blue
-  description: "Related to gutter margin thumbnail decorations"
+  description: "Related to core folding engine, range calculation, or auto-unfolding"
 
-- name: "🔍 hover"
-  color: "6f42c1" # Purple
-  description: "Related to hover tooltip preview card and metadata"
+- name: "🎨 fold: classes"
+  color: "38bdf8" # Tailwind Sky Blue
+  description: "Related to HTML class, JSX className, Tailwind, or utility wrappers"
 
-- name: "🖼️ format: svg"
-  color: "ff9900" # SVG Orange
-  description: "Specific to SVG parsing, viewBox or rendering"
-
-- name: "🖼️ format: webp/avif"
+- name: "🖼️ fold: images"
   color: "2ea44f" # Modern Green
-  description: "Specific to WebP, AVIF, or next-gen formats"
+  description: "Related to src, srcset image URLs or Base64 Data URI folding"
 
-- name: "🌐 remote-images"
-  color: "0366d6" # Network Blue
-  description: "Related to downloading and caching remote HTTP/HTTPS images"
+- name: "📐 fold: svg"
+  color: "ff9900" # SVG Orange
+  description: "Related to SVG path (d=...) or coordinate points folding"
 
-- name: "📦 data-uri"
+- name: "⚙️ fold: custom"
+  color: "f97316" # Orange
+  description: "Related to user-defined regex patterns and custom attribute folding"
+
+- name: "🔍 hover-preview"
+  color: "6f42c1" # Purple
+  description: "Related to hover tooltip preview card, class stats, or thumbnail rendering"
+
+- name: "🏷️ badges-decorations"
   color: "ea4aaa" # Magenta
-  description: "Related to inline Base64 or UTF-8 Data URIs"
+  description: "Related to inline badges, mask characters, and decoration styling"
+
+- name: "📊 status-bar"
+  color: "0366d6" # Network Blue
+  description: "Related to the status bar counter, toggle, or icon"
+
+- name: "⌨️ commands"
+  color: "1d76db" # Tech Blue
+  description: "Related to keybindings, command palette actions, or context menus"
 
 # --- 💻 OPERATING SYSTEMS ---
 - name: "🪟 os: windows"
