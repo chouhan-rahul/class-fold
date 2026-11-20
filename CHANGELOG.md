@@ -2,6 +2,16 @@
 
 All notable changes to the **Class Fold** extension will be documented in this file.
 
+## [0.1.1] - 2026-11-20
+
+### 🐛 Fixed & Improved
+- **Fixed Marketplace Badges:** Corrected repository URLs and shield badge paths in `package.json` to link directly to `chouhan-rahul/class-fold` instead of broken placeholder URLs.
+- **Updated GitHub Component Labels:** Replaced leftover template labels in `.github/labels.yml` with dedicated Class Fold component labels (`fold: engine`, `fold: classes`, `fold: images`, `fold: svg`, `fold: custom`, `hover-preview`, `badges-decorations`, `status-bar`, `commands`).
+- **Added PayPal Sponsor Links:** Added PayPal donation links to `.github/FUNDING.yml` and issue template contact configuration.
+- **Comprehensive Link Audit:** Verified all repository, documentation, contributing, security, and issue links across the entire project.
+
+---
+
 ## [0.1.0] - 2026-11-17
 
 ### 🎉 Initial Release
@@ -20,3 +30,6 @@ All notable changes to the **Class Fold** extension will be documented in this f
   - `Class Fold: Copy Folded Content Under Cursor` – Quickly copy full attribute text to clipboard.
   - `Class Fold: Unfold All in Active File` – Expand all folded attributes in the active document.
   - `Class Fold: Re-Fold All in Active File` – Re-apply all folds in the active document.
+
+[0.1.1]: https://github.com/chouhan-rahul/class-fold/compare/v0.1.0...v0.1.1
+[0.1.0]: https://github.com/chouhan-rahul/class-fold/releases/tag/v0.1.0
