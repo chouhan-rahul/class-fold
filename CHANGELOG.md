@@ -8,6 +8,8 @@ All notable changes to the **Class Fold** extension will be documented in this f
 - **Fixed Marketplace Badges:** Corrected repository URLs and shield badge paths in `package.json` to link directly to `chouhan-rahul/class-fold` instead of broken placeholder URLs.
 - **Updated GitHub Component Labels:** Replaced leftover template labels in `.github/labels.yml` with dedicated Class Fold component labels (`fold: engine`, `fold: classes`, `fold: images`, `fold: svg`, `fold: custom`, `hover-preview`, `badges-decorations`, `status-bar`, `commands`).
 - **Added PayPal Sponsor Links:** Added PayPal donation links to `.github/FUNDING.yml` and issue template contact configuration.
+- **CI Workflow Security Permissions:** Added explicit `permissions: { contents: read }` to `.github/workflows/ci.yml` resolving CodeQL alert.
+- **Dependency Security Patch:** Patched `minimatch` dependency to `^11.0.1` (resolved to `11.0.9`) resolving Dependabot vulnerability.
 - **Comprehensive Link Audit:** Verified all repository, documentation, contributing, security, and issue links across the entire project.
 
 ---
