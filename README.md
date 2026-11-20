@@ -7,7 +7,7 @@
 > **Clean, interactive inline folding for Tailwind CSS classes, JSX classNames, SVG paths, and long image URLs.**  
 > Keep your markup hierarchy readable and clutter-free without disrupting your editing workflow.
 
-[![Visual Studio Marketplace Version](https://img.shields.io/badge/Version-v0.1.0-blue?style=flat-square&logo=visual-studio-code)](https://marketplace.visualstudio.com/items?itemName=rahulchouhan.class-fold)
+[![Visual Studio Marketplace Version](https://img.shields.io/badge/Version-v0.1.1-blue?style=flat-square&logo=visual-studio-code)](https://marketplace.visualstudio.com/items?itemName=rahulchouhan.class-fold)
 [![Build Status](https://img.shields.io/github/actions/workflow/status/chouhan-rahul/class-fold/ci.yml?branch=main&label=Build&logo=github&style=flat-square)](https://github.com/chouhan-rahul/class-fold/actions)
 [![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg?style=flat-square)](https://github.com/chouhan-rahul/class-fold/blob/main/LICENSE)
 

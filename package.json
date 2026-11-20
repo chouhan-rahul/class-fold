@@ -2,7 +2,7 @@
   "name": "class-fold",
   "displayName": "Class Fold",
   "description": "Intelligent inline folding for Tailwind CSS classes, JSX classNames, SVG paths, and long image URLs.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "publisher": "rahulchouhan",
   "author": {
     "name": "Rahul Chouhan"
@@ -37,18 +37,18 @@
   ],
   "badges": [
     {
-      "url": "https://img.shields.io/github/stars/class-fold/class-fold",
-      "href": "https://github.com/class-fold/class-fold",
+      "url": "https://img.shields.io/github/stars/chouhan-rahul/class-fold",
+      "href": "https://github.com/chouhan-rahul/class-fold",
       "description": "GitHub Stars"
     },
     {
-      "url": "https://img.shields.io/github/license/class-fold/class-fold",
-      "href": "https://github.com/class-fold/class-fold/blob/main/LICENSE",
+      "url": "https://img.shields.io/github/license/chouhan-rahul/class-fold",
+      "href": "https://github.com/chouhan-rahul/class-fold/blob/main/LICENSE",
       "description": "License"
     },
     {
-      "url": "https://img.shields.io/github/v/release/class-fold/class-fold",
-      "href": "https://github.com/class-fold/class-fold/releases",
+      "url": "https://img.shields.io/github/v/release/chouhan-rahul/class-fold",
+      "href": "https://github.com/chouhan-rahul/class-fold/releases",
       "description": "Latest Release"
     }
   ],
